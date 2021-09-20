@@ -1,0 +1,127 @@
+---
+title: "Github"
+author: "Swathi"
+date: "20/09/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+---
+title: "Assignment1_Exercise"
+author: "Swathi"
+date: "03/09/2021"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+install.packages("readxl")
+library(readxl)
+View(SBEAssignment1_Popularcountries)
+excel_path <- "C:/Users/swath/Desktop/Sem1/SBE G505/Module1/Lab/Week1-Sept1-10/SBEAssignment1_Popularcountries.xlsx"
+A<- read_xlsx(excel_path, sheet= "Sheet1" )
+A
+tab <- A[c(4,14,15,17:21,23:36,39,43:45,47),c(2,3,5:20)]
+tab
+View(tab)
+Cont<- t(tab)
+Cont
+View(Cont)
+Final_Data<- Cont[c(3:18),]
+View(Final_Data)
+#renaming the variable
+Req_Data<-as.data.frame(Final_Data)
+Req_Data
+colnames(Final_Data)<-Req_Data
+colnames(Final_Data)<-paste("P",1:27)
+#as.numeric(Final_Data)
+#grap<- is.na(Final_Data)
+#print(colnames(Final_Data))
+#colnames(Final_Data)<-c("Variable",1:27)
+#new_vec<- gsub(",","",Final_Data)
+plot(Final_Data[,10], type = "l", xlab="Year", ylab="Energy Use(kg/capita)", main = "Energy Use graph")
+plot(Final_Data[,11], type = "l", xlab="Year", ylab="CO2 Emissions(tons/capita)", main = "CO2 Emissions graph")
+plot(Final_Data[,12], type = "l", xlab="Year", ylab="Electric Power Consumption(kWh)", main = "Power Consumption graph" )
+
+```
+Ind <- SBEAssignment1_Popularcountries
+Ind
+
+#excel_path <- "C:/Users/swath/Desktop/Sem1/SBE G505/Module1/Lab/SBEAssignment1_Popularcountries.xlsx"
+#read_xlsx(excel_path, sheet= "Sheet1", )
+dat <- Ind[c(4,14,15,17:21,23:36,39,43:45,47),c(2,3,5:20)]
+View(dat)
+#install.packages("writexl")
+library(writexl)
+write_xlsx(dat, "C:\\Users\\swath\\Desktop\\Sem1\\SBE G505\\Module1\\Lab\\A1.xlsx")
+View(A1)
+tibble::rownames_to_column(A1)
+A<- table(A1$`Series Name`, A1$`2000 [YR2000]`, A1$`2001 [YR2001]`)
+View(A)
+A<- rename(as.character(A1$`Series Name`))
+base::row.names.data.frame(A1, c[,3])
+rownames(A1)
+head(A1)
+rename_all(A1, `Series Name`)
+#X<-A1$`Country Code`
+#Y<-rm(X)
+#View(Y)
+A1 %>% rename_all(`Series Name`)
+A1 %>% rename_with()
+select(A1$`Series Name`)+rename_with(1:27)
+library(tidyverse)
+A<- A1 %>%
+  select(`Country Code`, `Series Name`)
+#library(pastecs)
+#stat.desc(as.character(dat))
+#summary(dat)
+#table(dat$`2000 [YR2000]`)
+
+install.packages("xlsx")
+readxl::read_xlsx("C:\\Users\\swath\\Desktop\\Sem1\\SBE G505\\Module1\\Lab\\A1.xlsx")
+
+A<-as.integer(dat$`2000 [YR2000]`)
+B<-as.integer(dat$`2001 [YR2001]`)
+C<-as.integer(dat$`2002 [YR2002]`)
+D<-as.integer(dat$`2003 [YR2003]`)
+E<-as.integer(dat$`2004 [YR2004]`)
+F<-as.integer(dat$`2005 [YR2005]`)
+G<-as.integer(dat$`2006 [YR2006]`)
+H<-as.integer(dat$`2007 [YR2007]`)
+I<-as.integer(dat$`2008 [YR2008]`)
+J<-as.integer(dat$`2009 [YR2009]`)
+K<-as.integer(dat$`2010 [YR2010]`)
+L<-as.integer(dat$`2011 [YR2011]`)
+M<-as.integer(dat$`2012 [YR2012]`)
+N<-as.integer(dat$`2013 [YR2013]`)
+O<-as.integer(dat$`2014 [YR2014]`)
+P<-as.integer(dat$`2015 [YR2015]`)
+View(dat)
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
