@@ -1,0 +1,45 @@
+---
+title: "Data types in R(saji)"
+author: "Saji"
+date: "24/08/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Run this command to know the installed Version of R
+R.Version()
+
+# Run this command to know the directory in which you are operating
+dir()
+
+# Run this command to know the date in human readable format
+date()
+
+# Run this command to know the date in system format
+Sys.time()
+
+# Run this command to know the packages loaded in R environment
+sessionInfo()
+```
+```{r}
+library(devtools)
+library(fs)
+library(tidyverse)
+create_package("C:/Users/Sajitha/Desktop/MBA 1 sem/R programming/mypackage")
+
+```
+#Functions in a package
+```{r}
+a<- factor(c("male","female","neutral"))
+b<-factor(c("pilani","hyd","goa","dubai"))
+c(a,b)
+factor(c(as.character(a),as.character(b)))
+fbind<-function(a,b)
+{
+  factor(c(as.character(a),as.character(b)))
+}
+```
