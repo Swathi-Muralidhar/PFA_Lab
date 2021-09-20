@@ -34,7 +34,7 @@ create_package("C:/Users/Sajitha/Desktop/MBA 1 sem/R programming/mypackage")
 ```
 #Functions in a package
 ```{r}
-a<- factor(c("male","female","neutral"))
+a<- factor(c("Utkarsha","Sajitha","Swathi"))
 b<-factor(c("pilani","hyd","goa","dubai"))
 c(a,b)
 factor(c(as.character(a),as.character(b)))
